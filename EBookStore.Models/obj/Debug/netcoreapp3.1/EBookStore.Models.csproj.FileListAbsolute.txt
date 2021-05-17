@@ -1,0 +1,9 @@
+G:\.NET Projects\EBookStore\EBookStore.Models\bin\Debug\netcoreapp3.1\EBookStore.Models.deps.json
+G:\.NET Projects\EBookStore\EBookStore.Models\bin\Debug\netcoreapp3.1\EBookStore.Models.dll
+G:\.NET Projects\EBookStore\EBookStore.Models\bin\Debug\netcoreapp3.1\EBookStore.Models.pdb
+G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.csprojAssemblyReference.cache
+G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.AssemblyInfoInputs.cache
+G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.AssemblyInfo.cs
+G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.csproj.CoreCompileInputs.cache
+G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.dll
+G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.pdb

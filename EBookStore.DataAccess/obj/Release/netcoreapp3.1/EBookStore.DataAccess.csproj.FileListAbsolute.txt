@@ -1,0 +1,8 @@
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\bin\Release\netcoreapp3.1\EBookStore.DataAccess.deps.json
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\bin\Release\netcoreapp3.1\EBookStore.DataAccess.dll
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\bin\Release\netcoreapp3.1\EBookStore.DataAccess.pdb
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Release\netcoreapp3.1\EBookStore.DataAccess.AssemblyInfoInputs.cache
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Release\netcoreapp3.1\EBookStore.DataAccess.AssemblyInfo.cs
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Release\netcoreapp3.1\EBookStore.DataAccess.csproj.CoreCompileInputs.cache
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Release\netcoreapp3.1\EBookStore.DataAccess.dll
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Release\netcoreapp3.1\EBookStore.DataAccess.pdb

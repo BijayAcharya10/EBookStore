@@ -1,0 +1,8 @@
+G:\.NET Projects\EBookStore\EBookStore.Utility\bin\Release\netcoreapp3.1\EBookStore.Utility.deps.json
+G:\.NET Projects\EBookStore\EBookStore.Utility\bin\Release\netcoreapp3.1\EBookStore.Utility.dll
+G:\.NET Projects\EBookStore\EBookStore.Utility\bin\Release\netcoreapp3.1\EBookStore.Utility.pdb
+G:\.NET Projects\EBookStore\EBookStore.Utility\obj\Release\netcoreapp3.1\EBookStore.Utility.AssemblyInfoInputs.cache
+G:\.NET Projects\EBookStore\EBookStore.Utility\obj\Release\netcoreapp3.1\EBookStore.Utility.AssemblyInfo.cs
+G:\.NET Projects\EBookStore\EBookStore.Utility\obj\Release\netcoreapp3.1\EBookStore.Utility.csproj.CoreCompileInputs.cache
+G:\.NET Projects\EBookStore\EBookStore.Utility\obj\Release\netcoreapp3.1\EBookStore.Utility.dll
+G:\.NET Projects\EBookStore\EBookStore.Utility\obj\Release\netcoreapp3.1\EBookStore.Utility.pdb
