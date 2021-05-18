@@ -7,3 +7,6 @@ G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore
 G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.csproj.CoreCompileInputs.cache
 G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.dll
 G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.pdb
+G:\.NET Projects\EBookStore\EBookStore.Models\bin\Debug\netcoreapp3.1\EBookStore.Models.runtimeconfig.json
+G:\.NET Projects\EBookStore\EBookStore.Models\bin\Debug\netcoreapp3.1\EBookStore.Models.runtimeconfig.dev.json
+G:\.NET Projects\EBookStore\EBookStore.Models\obj\Debug\netcoreapp3.1\EBookStore.Models.genruntimeconfig.cache

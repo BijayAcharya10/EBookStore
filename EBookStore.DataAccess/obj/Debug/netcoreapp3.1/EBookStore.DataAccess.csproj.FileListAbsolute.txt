@@ -12,3 +12,6 @@ G:\.NET Projects\EBookStore\EBookStore.DataAccess\bin\Debug\netcoreapp3.1\EBookS
 G:\.NET Projects\EBookStore\EBookStore.DataAccess\bin\Debug\netcoreapp3.1\EBookStore.Utility.pdb
 G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Debug\netcoreapp3.1\EBookStore.DataAccess.csprojAssemblyReference.cache
 G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Debug\netcoreapp3.1\EBookStore.DataAccess.csproj.CopyComplete
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\bin\Debug\netcoreapp3.1\EBookStore.DataAccess.runtimeconfig.json
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\bin\Debug\netcoreapp3.1\EBookStore.DataAccess.runtimeconfig.dev.json
+G:\.NET Projects\EBookStore\EBookStore.DataAccess\obj\Debug\netcoreapp3.1\EBookStore.DataAccess.genruntimeconfig.cache

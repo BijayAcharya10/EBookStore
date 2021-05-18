@@ -438,3 +438,6 @@ G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Custo
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Home\Privacy.cshtml.g.cs
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\_ViewImports.cshtml.g.cs
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\_ViewStart.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\Humanizer.dll
