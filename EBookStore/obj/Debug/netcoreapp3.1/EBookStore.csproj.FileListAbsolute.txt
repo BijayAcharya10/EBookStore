@@ -442,3 +442,7 @@ G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\Humanizer.dll
 G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\Dapper.dll
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Upsert.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CreateAndBackToListButton.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EditAndBackToListButton.cshtml.g.cs
