@@ -448,3 +448,9 @@ G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Views\Share
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EditAndBackToListButton.cshtml.g.cs
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CoverType\Index.cshtml.g.cs
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CoverType\Upsert.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Upsert.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Company\Index.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Company\Upsert.cshtml.g.cs
