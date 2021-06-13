@@ -505,3 +505,6 @@ G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Order\Details.cshtml.g.cs
 G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\Twilio.dll
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\UserName\Default.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.Views.dll
+G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.dll
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs

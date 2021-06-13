@@ -97,6 +97,10 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "ReflectionIT.Mvc.Paging": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
             "SendGrid": {
               "target": "Package",
               "version": "[9.12.0, )"
@@ -199,6 +203,10 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "ReflectionIT.Mvc.Paging": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
             "SendGrid": {
               "target": "Package",
               "version": "[9.12.0, )"
@@ -300,6 +308,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "ReflectionIT.Mvc.Paging": {
+              "target": "Package",
+              "version": "[4.0.0, )"
             },
             "SendGrid": {
               "target": "Package",
@@ -424,6 +436,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "ReflectionIT.Mvc.Paging": {
+              "target": "Package",
+              "version": "[4.0.0, )"
             },
             "SendGrid": {
               "target": "Package",

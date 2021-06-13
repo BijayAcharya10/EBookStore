@@ -27,10 +27,20 @@ namespace EBookStore.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString,int page=1)
         {
-            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");  
+            IEnumerable<Product> model = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                //model = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType").
+                //    Where(s => s.Title.Contains(searchString));
+                model = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType").
+                       Where(x => x.Title.ToLower().Contains(searchString.ToLower()) ||
+                       x.Author.ToLower().Contains(searchString.ToLower()));
+            }
+            var productList = ReflectionIT.Mvc.Paging.PagingList.Create(model, 12, page);
             var claimsIdentity = (ClaimsIdentity)User.Identity;
+
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
             if(claim != null)
             {
