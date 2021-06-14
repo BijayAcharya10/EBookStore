@@ -1,11 +1,55 @@
-﻿@*@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="dashboard-container">
-    <h1>Dashboard</h1>
-    <div id="chart">
-
+@* User count, cart, books, items sold today,pending orders  *@
+<div class="container">
+    @*<h1 class="display-4 text-center text-white bg-info rounded-3">Daily Report</h1>*@
+    <div class="row mb-5">
+        <div class="four col-md-3">
+            <div class="counter-box bg-warning rounded-3">
+                <i class="fa fa-book"></i> <span class="counter">5</span>
+                <p>Products</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box bg-primary rounded-3">
+                <i class="fa fa-group"></i> <span class="counter">4</span>
+                <p>Registered Users</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box bg-secondary rounded-3">
+                <i class="fa fa-dollar"></i> <span class="counter">3000</span>
+                <p>Today's Earning</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box bg-success rounded-3">
+                <i class="fa fa-user"></i> <span class="counter">4</span>
+                <p>Orders Today</p>
+            </div>
+        </div>
     </div>
+
+  
 </div>
 
-<script src="~/js/dashboard.js"></script>*@
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 1000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+
+        });
+    </script>
+}
