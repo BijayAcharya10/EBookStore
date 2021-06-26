@@ -54,5 +54,9 @@ namespace EBookStore.Models
 
         public CoverType CoverType { get; set; }
 
+        public string OfferName { get; set; }
+
+        public int Discount { get; set; }
+
     }
 }

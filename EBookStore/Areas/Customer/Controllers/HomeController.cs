@@ -1,4 +1,5 @@
-﻿using EBookStore.DataAccess.Repository.IRepository;
+﻿using EBookStore.DataAccess.Data;
+using EBookStore.DataAccess.Repository.IRepository;
 using EBookStore.Models;
 using EBookStore.Models.ViewModels;
 using EBookStore.Utility;
@@ -20,15 +21,35 @@ namespace EBookStore.Areas.Customer.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger,IUnitOfWork unitOfWork)
+        public HomeController(ILogger<HomeController> logger,IUnitOfWork unitOfWork, ApplicationDbContext db)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _db = db;
         }
 
         public IActionResult Index(string searchString,int page=1)
         {
+            var todaysDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+            var weeklydate =  DateTime.Now.Date.AddDays(-7);
+
+
+            //For Dashboard
+            ViewBag.products = _db.Products.Distinct().Count();
+            ViewBag.registeredUsers = _db.Users.Distinct().Count();
+            ViewBag.todayOrders = _db.OrderHeaders.Where(x=>x.OrderDate >= todaysDate).Count();
+            ViewBag.notVerifiedUsers = _db.Users.Where(x => x.EmailConfirmed == true).Distinct().Count();
+
+            //For weekly data
+            ViewBag.weeklyOrder = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate).Count();
+            ViewBag.cancelOrderWeekly = _db.OrderHeaders.Where(x=>x.OrderStatus == "Cancelled").Count();
+            ViewBag.orderProcessing = _db.OrderHeaders.Where(x=>x.OrderStatus == "Processing").Count();
+            ViewBag.todayShipment = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate || x.OrderStatus == "Shipped").Count();
+
+            //ViewBag.discountedPrice =_db.Products.Select(x => x.Price / x.Discount).ToList();
+
             IEnumerable<Product> model = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -115,12 +136,14 @@ namespace EBookStore.Areas.Customer.Controllers
                 };
                 return View(cartObj);
             }
-
-
-            
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
         {
             return View();
         }

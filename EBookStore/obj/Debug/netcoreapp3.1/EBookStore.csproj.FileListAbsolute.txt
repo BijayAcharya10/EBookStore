@@ -508,3 +508,6 @@ G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Views\Share
 G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.Views.dll
 G:\.NET Projects\EBookStore\EBookStore\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.dll
 G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Discount\Index.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Discount\Upsert.cshtml.g.cs
+G:\.NET Projects\EBookStore\EBookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Home\Contact.cshtml.g.cs
