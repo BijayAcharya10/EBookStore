@@ -199,25 +199,43 @@ else
     </script>
 
     <script>
-        let ctx2 = document.getElementById('myChart2').getContext('2d');
-        let myChart2 = new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['Monthly Shipment', 'Monthly Order', 'Monthly Cancellation'],
-                datasets: [{
-                    label: 'No of Orders',
-                    data: [17, 25, 7],
-                    backgroundColor: 'rgba(6,128,249)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+        const api_url = '/Customer/Home/GetAllMonthly';
+        let monthdata = [];
+        monthChart();
+        async function monthChart() {
+            const data = await getMonthlyData();
+            let ctx2 = document.getElementById('myChart2').getContext('2d');
+            let myChart2 = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Monthly Shipment', 'Monthly Order', 'Monthly Cancellation'],
+                    datasets: [{
+                        label: 'No of Orders',
+                        data: data.monthdata,
+                        backgroundColor: 'rgba(6,128,249)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
+
+
+
+        async function getMonthlyData() {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            monthdata[0] = data.monthlyShipment;
+            monthdata[1] = data.monthlyOrder;
+            monthdata[2] = data.monthlyCancellation;
+            //console.log(weekdata);
+            return { monthdata };
+        }
     </script>
 }

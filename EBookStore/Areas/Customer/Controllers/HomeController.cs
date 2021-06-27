@@ -163,19 +163,34 @@ namespace EBookStore.Areas.Customer.Controllers
             //var todaysDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
 
             //weekly shipment
-            var weeklyShipment = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate || x.OrderStatus == "Shipped").Count();
+            var weeklyShipment = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate && x.OrderStatus == "Shipped").Count();
 
             //weekly order
             var weeklyOrder = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate).Count();
 
-            //weekly earning
-            //var weeklyEarning = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate).Sum(x => x.OrderTotal);
-
             //weekly cancellation
-            var weeklyCancellation = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate || x.OrderStatus == "Cancelled").Count();
+            var weeklyCancellation = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate && x.OrderStatus == "Cancelled").Count();
 
             
             return Json(new {weeklyShipment, weeklyOrder, weeklyCancellation });
+        }
+
+
+        public IActionResult GetAllMonthly()
+        {
+            var monthlydate = DateTime.Now.Date.AddDays(-30);
+
+            //monthly shipment
+            var monthlyShipment = _db.OrderHeaders.Where(x => x.OrderDate >= monthlydate && x.OrderStatus == "Shipped").Count();
+
+            //monthly order
+            var monthlyOrder = _db.OrderHeaders.Where(x => x.OrderDate >= monthlydate).Count();
+
+            //monthly cancellation
+            var monthlyCancellation = _db.OrderHeaders.Where(x => x.OrderDate >= monthlydate && x.OrderStatus == "Cancelled").Count();
+
+
+            return Json(new { monthlyShipment, monthlyOrder, monthlyCancellation });
         }
 
         #endregion
