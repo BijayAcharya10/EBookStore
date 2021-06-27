@@ -75,14 +75,14 @@
     <div class="col-sm-6">
      <div class="card">
        <canvas id="myChart" width="100" height="70"></canvas>
-         <h5>Orders This Week</h5>
+         <h5 class="text-center">Orders This Week</h5>
      </div>
      </div>
 
     <div class="col-sm-6">
      <div class="card">
         <canvas id="myChart2" width="100" height="70"></canvas>
-         <h5>Order For Last 6 Weeks</h5>
+         <h5 class="text-center">Order For Last 6 Weeks</h5>
     </div>
     </div>
     </div>
@@ -157,68 +157,57 @@ else
 
 
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Sunday', 'Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'],
-                datasets: [{
-                    label: 'No of Orders',
-                    data: [10, 2, 5, 9, 7, 1],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+        const url = '/Customer/Home/GetAll';
+        let weekdata = [];
+        chartIt();
+        async function chartIt() {
+            const data = await getData();
+            console.log(data.weekdata);
+            let ctx = document.getElementById('myChart').getContext('2d');
+            let myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Weekly Shipment', 'Weekly Order', 'Weekly Cancellation'],
+                    datasets: [{
+                        label: 'No of Orders',
+                        data: data.weekdata,
+                        backgroundColor: 'rgba(6,128,249)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
+       
+
+        async function getData() {
+            const response = await fetch(url);
+            const data = await response.json();
+            weekdata[0] = data.weeklyShipment;
+            weekdata[1] = data.weeklyOrder;
+            weekdata[2] = data.weeklyCancellation;
+            //console.log(weekdata);
+            return { weekdata };
+        }
+
     </script>
 
     <script>
-        var ctx = document.getElementById('myChart2').getContext('2d');
-        var myChart = new Chart(ctx, {
+        let ctx2 = document.getElementById('myChart2').getContext('2d');
+        let myChart2 = new Chart(ctx2, {
             type: 'bar',
             data: {
-                labels: ['Sunday', 'Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'],
+                labels: ['Monthly Shipment', 'Monthly Order', 'Monthly Cancellation'],
                 datasets: [{
                     label: 'No of Orders',
-                    data: [10, 4, 4, 6, 2, 1],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
+                    data: [17, 25, 7],
+                    backgroundColor: 'rgba(6,128,249)',
                     borderWidth: 1
                 }]
             },

@@ -23,34 +23,34 @@ namespace EBookStore.Areas.Customer.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger,IUnitOfWork unitOfWork, ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork, ApplicationDbContext db)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
             _db = db;
         }
 
-        public IActionResult Index(string searchString,int page=1)
+        public IActionResult Index(string searchString, int page = 1)
         {
             var todaysDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
-            var weeklydate =  DateTime.Now.Date.AddDays(-7);
+            var weeklydate = DateTime.Now.Date.AddDays(-7);
 
 
             //For Dashboard
             ViewBag.products = _db.Products.Distinct().Count();
             ViewBag.registeredUsers = _db.Users.Distinct().Count();
-            ViewBag.todayOrders = _db.OrderHeaders.Where(x=>x.OrderDate >= todaysDate).Count();
+            ViewBag.todayOrders = _db.OrderHeaders.Where(x => x.OrderDate >= todaysDate).Count();
             ViewBag.notVerifiedUsers = _db.Users.Where(x => x.EmailConfirmed == true).Distinct().Count();
 
             //For weekly data
             ViewBag.weeklyOrder = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate).Count();
-            ViewBag.cancelOrderWeekly = _db.OrderHeaders.Where(x=>x.OrderStatus == "Cancelled").Count();
-            ViewBag.orderProcessing = _db.OrderHeaders.Where(x=>x.OrderStatus == "Processing").Count();
-            ViewBag.todayShipment = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate || x.OrderStatus == "Shipped").Count();
+            ViewBag.cancelOrderWeekly = _db.OrderHeaders.Where(x => x.OrderStatus == "Cancelled").Count();
+            ViewBag.orderProcessing = _db.OrderHeaders.Where(x => x.OrderStatus == "Processing").Count();
+            ViewBag.todayShipment = _db.OrderHeaders.Where(x => x.OrderDate >= todaysDate || x.OrderStatus == "Shipped").Count();
 
             //ViewBag.discountedPrice =_db.Products.Select(x => x.Price / x.Discount).ToList();
 
-            IEnumerable<Product> model = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
+            IEnumerable<Product> model = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
             if (!String.IsNullOrEmpty(searchString))
             {
                 //model = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType").
@@ -63,7 +63,7 @@ namespace EBookStore.Areas.Customer.Controllers
             var claimsIdentity = (ClaimsIdentity)User.Identity;
 
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-            if(claim != null)
+            if (claim != null)
             {
                 var count = _unitOfWork.ShoppingCart
                     .GetAll(c => c.ApplicationUserId == claim.Value)
@@ -102,7 +102,7 @@ namespace EBookStore.Areas.Customer.Controllers
 
                 ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
                     u => u.ApplicationUserId == cartObject.ApplicationUserId && u.ProductId == cartObject.ProductId
-                    ,includeProperties:"Product"
+                    , includeProperties: "Product"
                     );
                 if (cartFromDb == null)
                 {
@@ -153,5 +153,31 @@ namespace EBookStore.Areas.Customer.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        #region API Calls
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var weeklydate = DateTime.Now.Date.AddDays(-7);
+            //var todaysDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+
+            //weekly shipment
+            var weeklyShipment = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate || x.OrderStatus == "Shipped").Count();
+
+            //weekly order
+            var weeklyOrder = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate).Count();
+
+            //weekly earning
+            //var weeklyEarning = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate).Sum(x => x.OrderTotal);
+
+            //weekly cancellation
+            var weeklyCancellation = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate || x.OrderStatus == "Cancelled").Count();
+
+            
+            return Json(new {weeklyShipment, weeklyOrder, weeklyCancellation });
+        }
+
+        #endregion
     }
 }
