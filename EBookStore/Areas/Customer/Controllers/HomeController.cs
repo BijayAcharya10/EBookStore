@@ -46,7 +46,7 @@ namespace EBookStore.Areas.Customer.Controllers
             ViewBag.weeklyOrder = _db.OrderHeaders.Where(x => x.OrderDate >= weeklydate).Count();
             ViewBag.cancelOrderWeekly = _db.OrderHeaders.Where(x => x.OrderStatus == "Cancelled").Count();
             ViewBag.orderProcessing = _db.OrderHeaders.Where(x => x.OrderStatus == "Processing").Count();
-            ViewBag.todayShipment = _db.OrderHeaders.Where(x => x.OrderDate >= todaysDate || x.OrderStatus == "Shipped").Count();
+            ViewBag.todayShipment = _db.OrderHeaders.Where(x => x.OrderDate >= todaysDate && x.OrderStatus == "Shipped").Count();
 
             //ViewBag.discountedPrice =_db.Products.Select(x => x.Price / x.Discount).ToList();
 

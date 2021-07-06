@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ValleyBookStore <i class="fas fa-book text-white" style=""></i></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EBookStore <i class="fas fa-book text-white" style=""></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -55,10 +55,10 @@
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Company / User
+                                    User
                                 </a>
                                 <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
+                                    @*<a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>*@
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">User</a>
                                 </div>
                             </li>
@@ -155,10 +155,10 @@
                             to receive ValleyBookStore's offers and updates
                         </h5>
 
-                        <div class="form-outline form-white mb-4">
+                        @*<div class="form-outline form-white mb-4">
                             <input type="text" id="formControlLg" class="form-control form-control-lg" />
                             <label class="form-label" for="formControlLg">Email Address</label>
-                        </div>
+                        </div>*@
 
                         <ul class="fa-ul" style="margin-left: 1.65em;">
                             <li class="mb-3">
